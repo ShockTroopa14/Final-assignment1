@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Service Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/ServicesPage.css" />
+    </head>
+    <body>
+     <%- include('./partials/NavBar') %>
+     <div class="homePage-Background">
+    <header class="service-header">
+    <h4>Service Section</h4>
+    <p class="service-text">
+    Welcome to my Service Page. My service is creating front-end websites like this one for the right price. 
+    Below you can find some of my past projects I have worked on. If you have any questions please feel free to email me.
+    </p>
+    </header>
+
+    <div class="service-offer">
+    <h4>Offering:</h4>
+    <p class="offer-text">
+    I can create and design any front end website design you have. I have expreience with React, and EJS.
+    For most of my projects I will use firebase for the back end and Bootstrap as plugin to make your website 
+    flash even more to the customers.
+    </p>
+    
+    <button class="bookService-btn">Book a Meeting</button>
+    </div>
+
+
+    <div class="pastwork-widget">
+        <h4>Past Work Examples:</h4>
+        
+        <div class="work-examples-container">
+        <div class="work-example">Dig Insights Survey</div>
+        <div class="work-example">Colour Switch Game</div>
+        <div class="work-example">Colour Trek</div>
+
+        <a class="view-more-tag">See more projects</a>
+        </div>
+    </div>
+     </div>
+
+         <%- include('./partials/footer') %>
+    </body>
+</html>

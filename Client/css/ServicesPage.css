@@ -1,0 +1,14 @@
+.service-header {
+    border: 2px solid black;
+    text-align: center;
+}
+
+.service-offer {
+    border: 2px solid red;
+    text-align: center;
+}
+
+.pastwork-widget {
+    border: 2px solid green;
+    text-align: center;
+}

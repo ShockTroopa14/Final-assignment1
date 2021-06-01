@@ -1,0 +1,18 @@
+.footer-container {
+    padding: 30px;
+    text-align: center;
+    background-color: #2f3258;
+}
+
+.social-icon {
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.footer-text-div {
+    margin-top: 50px;
+}

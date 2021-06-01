@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Test Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/homePage.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Goblin+One&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+    <%- include('./partials/NavBar') %>
+        <div class="background-image-container">
+            <div class="overlay-color">
+                <div class="site-title-box">
+                    <h3 class="website-title">Welcome to my Website</h3>
+                    <p class="secondary-text">This is my wbsite that I made with EJS. Please Create an Account</p>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="funny-quotes">
+            <div class="quotes-container">
+                <div class="quote">
+                    <p class="secondary-text">
+                        “Live as if you were to die tomorrow. Learn as if you were to live forever.”
+                    </p>
+                    <p class="quote-person"> -Mahatma Gandhi</p>
+                    <img src="/img/gandhi.jpg" alt="Image" class="quote-img" />
+                </div>
+                <div class="quote">
+                    <p class="secondary-text">
+                        When you reach the end of your rope, tie a knot in it and hang on.
+                    </p>
+                    <p class="quote-person"> -Franklin D. Roosevelt</p>
+                    <img src="/img/FDR.jpg" alt="Image" class="quote-img" />
+                </div>
+                <div class="quote">
+                    <p class="secondary-text">
+                        When something is important enough, you do it even if the odds are not in your favor.
+                    </p>
+                    <p class="quote-person"> -Elon Musk</p>
+                    <img src="/img/elonMusk.jpg" alt="Image" class="quote-img" />
+                </div>
+                <div class="quote">
+                    <p class="secondary-text">
+                        "Life is what happens when you're busy making other plans."
+                    </p>
+                    <p class="quote-person"> -John Lennon</p>
+                    <img src="/img/johnLennon.jpg" alt="Image" class="quote-img" />
+                </div>
+            </div>
+        </div>
+        <%- include('./partials/footer') %>
+</body>
+
+</html>

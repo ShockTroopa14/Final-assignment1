@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Contact Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/ContactPage.css" />
+    </head>
+    <body>
+     <%- include('./partials/NavBar') %>
+     <div class="contectPage-Background">
+     <header class="contactInfo-text">
+        <h4 class="header-contact">Contact Info:</h4>
+        <div class="pfp-container">
+          <img class="closeUp-pfp" src="./img/ProfilePicture.jpg" />
+        </div>
+          
+        <div class="contact-container">
+        <p class="name">Jake Alexander Green</p>
+          <a class="personal-email">alex20green01@gmail.com</a>
+          <a class="school-email">jgreen55@centennialcollege.ca</a>
+          <p class="student-number">301129153</p>
+        </div>
+     </header>
+
+    <div class="socialMedia-container">
+    <h4 class="social">Socials:</h4>
+        <div class="social-icon-container">
+        <img class="social-icon" src="/Assets/" id="discord" />
+        <img class="social-icon" src="/img/insta.png" id="instagram" />
+        <img class="social-icon" src="/img/reddit.png" id="reddit" />
+        <img class="social-icon" src="/img/faceBook.png" id="facebook" />
+        <img class="social-icon" src="/img/linked.png" id="linked-in" />
+        </div>
+    </div>
+
+        <div class="github-container">
+        <p class="github-text">Check out my Gitub:</p>
+        <img src="/img/github.png" class="github-img" alt="github-img" />
+        <a class="github-link-btn">Github Account</a>  
+        </div>
+     </div>
+
+      <%- include('./partials/footer') %>
+    </body>
+       
+</html> 

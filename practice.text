@@ -1,0 +1,28 @@
+  <% if(registered === true) { %>
+     <%- include('./partials/NavBar'), {text: "LOGIN-REQUIRED"} %>
+    <% } else {  %>
+       <%- include('./partials/NavBar'), {text: "LOGIN-NOT REQUIRED"} %>
+    <% } %>
+
+
+    
+        box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+
+        #2f3258
+
+
+      dark 
+      #232546
+
+      green
+      #60af5a
+
+      blue
+      #1976d2
+
+      super dark#111327
+
+footer
+ color: rgba(255, 255, 255, 0.8);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+   
