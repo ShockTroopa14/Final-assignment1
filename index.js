@@ -1,10 +1,11 @@
 #!/usr/bin/env node
+
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
+var __importDefault = (this && this.__importDefault) || function(mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var app_1 = __importDefault(require("./app"));
+var app_1 = __importDefault(require("./Server/Config/app"));
 var debug_1 = __importDefault(require("debug"));
 debug_1.default('new-assignment1:server');
 var http_1 = __importDefault(require("http"));
@@ -14,6 +15,7 @@ var server = http_1.default.createServer(app_1.default);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+
 function normalizePort(val) {
     var port = parseInt(val, 10);
     if (isNaN(port)) {
@@ -24,6 +26,7 @@ function normalizePort(val) {
     }
     return false;
 }
+
 function onError(error) {
     if (error.syscall !== 'listen') {
         throw error;
@@ -44,6 +47,7 @@ function onError(error) {
             throw error;
     }
 }
+
 function onListening() {
     var addr = server.address();
     var bind = typeof addr === 'string' ?

@@ -8,12 +8,12 @@
         <link rel="stylesheet" href="/css/ContactPage.css" />
     </head>
     <body>
-     <%- include('./Components/NavBar') %>
+     <%- include('../Components/NavBar.ejs') %>
      <div class="contectPage-Background">
      <header class="contactInfo-text">
         <h4 class="header-contact">Contact Info:</h4>
         <div class="pfp-container">
-          <img class="closeUp-pfp" src="./img/ProfilePicture.jpg" />
+          <img class="closeUp-pfp" src="/img/ProfilePicture.jpg" />    
         </div>
           
         <div class="contact-container">
@@ -27,11 +27,11 @@
     <div class="socialMedia-container">
     <h4 class="social">Socials:</h4>
         <div class="social-icon-container">
-        <img class="social-icon" src="/Assets/" id="discord" />
-        <img class="social-icon" src="/img/insta.png" id="instagram" />
-        <img class="social-icon" src="/img/reddit.png" id="reddit" />
-        <img class="social-icon" src="/img/faceBook.png" id="facebook" />
-        <img class="social-icon" src="/img/linked.png" id="linked-in" />
+        <img class="social-icon" src="/img/discord.png" id="discord" />
+        <img class="social-icon" src="./img/insta.png" id="instagram" />
+        <img class="social-icon" src="./img/reddit.png" id="reddit" />
+        <img class="social-icon" src="./img/faceBook.png" id="facebook" />
+        <img class="social-icon" src="./img/linked.png" id="linked-in" />
         </div>
     </div>
 
@@ -42,7 +42,7 @@
         </div>
      </div>
 
-      <%- include('./Components/footer') %>
+    <%- include('../Components/footer.ejs') %>>
     </body>
        
 </html> 

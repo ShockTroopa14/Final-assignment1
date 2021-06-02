@@ -4,20 +4,20 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 
-import indexRouter from './routes/index';
+import indexRouter from '../routes/index';
 
 let app = express();
 export default app; //exports app as the default obj
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '../Views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'Client')));
-app.use(express.static(path.join(__dirname, "node_modules")))
+app.use(express.static(path.join(__dirname, '../../Client')));
+app.use(express.static(path.join(__dirname, "../../node_modules")))
 
 app.use('/', indexRouter);
 

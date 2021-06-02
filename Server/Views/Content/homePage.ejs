@@ -5,14 +5,14 @@
     <title>Test Document</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/homePage.css" />
+    <link rel="stylesheet" href="../css/homePage.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Goblin+One&display=swap" rel="stylesheet">
     
 </head>
 
 <body>
-    <%- include('./Components/NavBar') %>
+    <%- include('../Components/NavBar.ejs') %>
         <div class="background-image-container">
             <div class="overlay-color">
                 <div class="site-title-box">
@@ -37,7 +37,7 @@
                         When you reach the end of your rope, tie a knot in it and hang on.
                     </p>
                     <p class="quote-person"> -Franklin D. Roosevelt</p>
-                    <img src="/img/FDR.jpg" alt="Image" class="quote-img" />
+                    <img src="/Assets/img/FDR.jpg" alt="Image" class="quote-img" />
                 </div>
                 <div class="quote">
                     <p class="secondary-text">
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-        <%- include('./Components/footer') %>
+           <%- include('../Components/footer.ejs') %>
 </body>
 
 </html>
