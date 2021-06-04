@@ -12,6 +12,10 @@
     border: 1px solid red;
 }
 
+#contact-row {
+    border: 3px solid orange;
+}
+
 .pfp-container {
     text-align: center;
 }
@@ -48,6 +52,7 @@
 
 .github-container {
     margin-top: 200px;
+    margin-bottom: 300px;
 }
 
 .social-icon-container {

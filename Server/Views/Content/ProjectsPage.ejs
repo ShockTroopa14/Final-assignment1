@@ -5,10 +5,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/css/ProjectsPage.css" />
-        <script src="/js/ProjectPage.js"></script>
+        <script src="/scripts/ProjectPage.js"></script>
     </head>
     <body>
-     <%- include('../Components/NavBar.ejs') %>
+ <%- include('../Components/NavBar.ejs') %>
      <div class="homePage-Background">
         <header class="projects-header">
             <h2>Past Projects</h2>
@@ -18,6 +18,48 @@
             <p class="primary-text">Here are a few honorable Projects that I have worked on in the past. Each project is labeled correctly with the language and date in whitch it was made.</p>
         </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col">
+       <div class="single-project" id="project-1" onclick="OpenPopUp(`myModal`)">
+          <img class="project-img" src=":" alt="project-img" />
+          <div class="project-content">
+          <p class="project-title">Colour Trek</p>
+            <p class="project-description">Colour Trek is the best and most detailed project ive ever worked on. <br/>
+            It was made using Swift and features random spawns of the collition objects and ball volocities. 
+            This was made in my Sinor Year of High School.
+            </p>
+          </div>
+    </div>
+  </div>
+  </div>
+    <div class="row">
+    <div class="col">
+    <div class="single-project" onclick="OpenPopUp(`myModal-moneyManager`)">
+            <img class="project-img" src=":" alt="project-img" />
+          <div class="project-content">
+          <p class="project-title">Money Manager</p>
+            <p class="project-description">The money manager website App I created helped me with keeping track of my expences. 
+              It was made using HTML, Javascript, CSS, that has a very nice UI. This was made in Grade 10.
+            </p>
+          </div>    
+    </div>
+      <div class="row">
+    <div class="col">
+     <div class="single-project" onclick="OpenPopUp(`myModal-SimonSays`)">
+            <img class="project-img" src=":" alt="project-img" />
+          <div class="project-content">
+          <p class="project-title">Simon Says</p>
+            <p class="project-description">My Simon Says app was a fun app to make. This was also made with Swift and making this was a challenge and fun.
+            The game can have up to 2 players on the same device. This was also made in Grade 10.
+            </p>
+          </div>
+    </div>
+  </div>
+  
+</div>
+          
+        <!--
         <div class="projects-container">
           <div class="single-project" id="project-1" onclick="OpenPopUp(`myModal`)">
           <img class="project-img" src=":" alt="project-img" />
@@ -48,12 +90,17 @@
             </p>
           </div>
      </div>
+     -->
       <!-- Pop Ups -->
       <div id="myModal" class="modal">
        <!-- Modal content -->
   <div class="modal-content">
     <span class="close" onclick="closePopUp(`myModal`)">&times;</span>
     <p>This is the Colour Trek Popup</p>
+    <p>Make sure to pause video so it doesnt play when you close window! Audio is set to muted because I recorded this durring class in grade 10 for another assignment at the time.</p>
+     <video class="moneyManager-video" controls autoplay muted>
+    <source src="/Assets/videos/color-trek.mp4" type="video/mp4">
+    </video>
   </div>
 
     </div>
@@ -63,7 +110,11 @@
        <!-- Modal content -->
   <div class="modal-content">
     <span class="close" onclick="closePopUp(`myModal-moneyManager`)">&times;</span>
-    <p>Money Manager</p>
+    <p>Money Manager:</p>
+    <p>Make sure to pause video so it doesnt play when you close window!</p>
+    <video class="moneyManager-video" controls autoplay >
+    <source src="/Assets/videos/budgety.mp4" type="video/mp4">
+    </video>
   </div>
 
     </div>
@@ -73,6 +124,11 @@
   <div class="modal-content">
     <span class="close" onclick="closePopUp(`myModal-SimonSays`)">&times;</span>
     <p>Simon Says</p>
+
+ <p>Make sure to pause video so it doesnt play when you close window!</p>
+ <video class="moneyManager-video" controls autoplay >
+    <source src="/Assets/videos/simonSays.mp4" type="video/mp4">
+    </video>
   </div>
 
     </div>

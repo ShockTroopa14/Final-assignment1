@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <title>Headers - 12</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="/css/NavBar.css"/>
-  </head>
-  <body>
-    <header class="site-header">
-        <div class="site-header__start">
-          <a href="/" class="brand">Brand</a>
+    <link rel="stylesheet" href="/css/NavBar.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">
+        <img class="website-logo" src="#" alt="logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="#navbarNavAltMarkup">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <
+       <li class="nav-item">
+        <a class=" nav-link" href="/AboutMe">About Me</a>
+      </li>
+       <li class="nav-item">
+        <a class=" nav-link" href="/ProjectsPage">Products Page</a>
+      </li>
+      <li class="nav-item">
+        <a class=" nav-link"href="/ContactPage">Contact Page</a>
+      </li>
+          <li class="nav-item">
+        <a class=" nav-link" href="#">Service Page</a>
+      </li>
+    </ul>
+            </div>
+            
+                <div class="btn-container">
+                <button type="button" class="btn btn-success" id="log-in">LogIn</button>
+                <button type="button" class="btn btn-info" id="register">Register</button>
+                </div>
         </div>
-        <div class="site-header__middle">
-          <ul class="sub-nav">
-            <li class="nav-link"><a class="name-link"href="/AboutMe">About Me</a></li>
-            <li class="nav-link"><a class="name-link" href="/ProjectsPage">Projects Page</a></li>
-            <li class="nav-link"><a class="name-link" href="/ContactPage">Contact Page</a></li>
-            <li class="nav-link"><a class="name-link" href="/ServicePage">Service Page</a></li>
-          </ul>
-        </div> 
-        <div class="site-header__end">
-          <button class="button button-icon" aria-label="Sign in" id="sign-in">
-           <p id="p-signIn">Sign in </p>
-          </button>
-           <button href="#" class="button button-icon" aria-label="Register" id="register-btn">
-           <p id="p-register">Register</p>
-          </button>
-        </div>
-    </header>
-  </body>
+    </nav>
+</body>
 </html>
