@@ -27,25 +27,25 @@ exports.default = router;
 
 //these are the routes for each link on the website.
 router.get('/', function(req, res, next) {
-    res.render('../views/Content/homePage.ejs', { title: 'Home Page' });
+    res.render('../Views/Content/homePage.ejs', { title: 'Home Page' });
 });
 router.get('/AboutMe', function(req, res, next) {
-    res.render('../views/Content/AboutMe.ejs', { title: 'Home Page' });
+    res.render('../Views/Content/AboutMe.ejs', { title: 'Home Page' });
 });
 router.get('/ContactPage', function(req, res, next) {
-    res.render('../views/Content/ContactPage.ejs', { title: 'Home Page' });
+    res.render('../Views/Content/ContactPage.ejs', { title: 'Home Page' });
 });
 router.get('/ProjectsPage', function(req, res, next) {
-    res.render('../views/Content/ProjectsPage.ejs', { title: 'Home Page' });
+    res.render('../Views/Content/ProjectsPage.ejs', { title: 'Home Page' });
 });
 router.get('/ServicePage', function(req, res, next) {
-    res.render('../views/Content/ServicesPage.ejs', { title: 'Home Page' });
+    res.render('../Views/Content/ServicesPage.ejs', { title: 'Home Page' });
 });
 router.get('/register', function(req, res, next) {
-    res.render('../views/Content/register.ejs', { title: 'Home Page' });
+    res.render('../Views/Content/register.ejs', { title: 'Home Page' });
 });
 router.get('/logIn', function(req, res, next) {
-    res.render('../views/Content/logIn.ejs');
+    res.render('../Views/Content/logIn.ejs');
 });
 router.post('/register', urlencodedParser, [
     //validation username
