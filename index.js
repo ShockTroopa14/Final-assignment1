@@ -1,6 +1,16 @@
 #!/usr/bin/env node
 
 "use strict";
+
+/*
+FILE NAME: index.js
+THIS WAS CODED BY: ALEX GREEN 
+last Eddited: 6/4/2021
+BOOTSTRAP was used in this project.
+
+*/
+
+//this file handles all the server start up with creatign the port.
 var __importDefault = (this && this.__importDefault) || function(mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };

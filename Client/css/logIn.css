@@ -1,3 +1,11 @@
+/*
+FILE NAME: logIn
+THIS WAS CODED BY: ALEX GREEN 
+last Eddited: 6/4/2021
+BOOTSTRAP was used in this project.
+
+*/
+
 .logIn-body {
     background-color: antiquewhite;
 }
@@ -5,12 +13,13 @@
 .styled-div {
     border: 2px solid black;
     margin-left: auto;
+    height: 250px;
     border-radius: 20px;
     margin-right: auto;
     width: fit-content;
     text-align: center;
     margin-top: 260px;
-    background-color: aqua;
+    background-color: darkgray;
 }
 
 .form-group {
@@ -20,6 +29,18 @@
 }
 
 .form-input {
+    border-radius: 5px;
     padding: 5px;
     width: 100%;
+}
+
+.log-in-btn {
+    position: relative;
+    top: 20px;
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: green;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
 }
