@@ -74,19 +74,19 @@ router.post('/register', urlencodedParser, [
 
         // return res.status(422).jsonp(errors.array());
         const alertErrors = errors.array();
-        res.render('../views/Content/register.ejs', {
+        res.render('../Views/Content/register.ejs', {
             alertErrors
 
         })
     } else {
 
-        res.render('../views/Content/homePage.ejs', {})
+        res.render('../Views/Content/homePage.ejs', {})
         console.log(req.body)
     }
 });
 
 //loging route
 router.get('/logIn', function(req, res, next) {
-    res.render('../views/Content/ServicesPage.ejs', { title: 'Home Page' });
+    res.render('../Views/Content/ServicesPage.ejs', { title: 'Home Page' });
 });
 //# sourceMappingURL=index.js.map
