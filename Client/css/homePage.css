@@ -9,7 +9,7 @@
     text-align: center;
     width: auto;
     height: 100vh;
-    background-color: rgba(50, 23, 77, 0.9);
+    background-color: rgba(29, 53, 87, 0.8);
 }
 
 #funny-quotes {
@@ -34,15 +34,23 @@ h3 {
 }
 
 .secondary-text {
-    color: black;
+    color: gold;
     font-size: 20px;
+}
+
+.secondary-text-quote {
+    color: whitesmoke;
+}
+
+.quote-person {
+    color: grey;
 }
 
 #quotes-container {
     margin-left: 0px;
     margin-right: 0px;
     max-width: none;
-    background-color: #232546;
+    background-color: #1c2335;
     padding: 40px;
     display: grid;
     grid-template-columns: auto auto auto auto;

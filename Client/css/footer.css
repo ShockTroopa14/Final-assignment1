@@ -1,7 +1,8 @@
 .footer-container {
+    color: whitesmoke;
     padding: 30px;
     text-align: center;
-    background-color: #2f3258;
+    background-color: #212529;
 }
 
 .social-icon {

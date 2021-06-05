@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="/css/ContactPage.css" />
 </head>
 
-<body>
+<body id="contact-body">
     <%- include('../Components/NavBar.ejs') %>
         <div class="container-fluid" id="contactPage-Background">
             <div class="container">
                 <div class="row" id='contact-row'>
                     <div class="col">
                         <div class="pfp-container">
-                            <img class="closeUp-pfp" src="/img/ProfilePicture.jpg" />
+                            <img class="closeUp-pfp" src="/Assets/img/ProfilePicture.jpg" />
                         </div>
                     </div>
                     <div class="col">
@@ -28,19 +28,18 @@
                     </div>
                     <div class="col">
                         <div class="social-icon-container">
-                            <img class="social-icon" src="/img/discord.png" id="discord" />
-                            <img class="social-icon" src="./img/insta.png" id="instagram" />
-                            <img class="social-icon" src="./img/reddit.png" id="reddit" />
-                            <img class="social-icon" src="./img/faceBook.png" id="facebook" />
-                            <img class="social-icon" src="./img/linked.png" id="linked-in" />
+                       <a href="https://www.instagram.com/"><img src="/Assets/img/insta.png" class="social-icon" id="insta" alt="insta"/></a>
+                <a href="https://www.discord.com/"><img src="/Assets/img/discord.png" class="social-icon" id="discord" /></a>
+                <a href="https://www.facebook.com/"> <img src="/Assets/img/faceBook.png" class="social-icon" id="facebook" /></a>
+               <a href="https://www.reddit.com/"><img src="/Assets/img/reddit.png" class="social-icon" id="reddit" /></a> 
                         </div>
                     </div>
                 </div>
             </div>
             <div class="github-container">
-                <img class="github-img" src="#" />
+                    <img class="github-img" src="/Assets/img/github.png" id="linked-in" />
                 <p class='github-text'>Check out my Github:</p>
-                <button type="button" class="btn btn-warning">Github</button>
+                <a  class="btn btn-warning" href="https://github.com/ShockTroopa14">Github</a>
             </div>
 
         </div>

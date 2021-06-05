@@ -1,0 +1,25 @@
+.logIn-body {
+    background-color: antiquewhite;
+}
+
+.styled-div {
+    border: 2px solid black;
+    margin-left: auto;
+    border-radius: 20px;
+    margin-right: auto;
+    width: fit-content;
+    text-align: center;
+    margin-top: 260px;
+    background-color: aqua;
+}
+
+.form-group {
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.form-input {
+    padding: 5px;
+    width: 100%;
+}

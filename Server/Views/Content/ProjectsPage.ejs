@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title> Products Page</title>
+        <title class="title"> Products Page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/css/ProjectsPage.css" />
@@ -15,17 +15,17 @@
         </header>
 
         <div class="text-info">
-            <p class="primary-text">Here are a few honorable Projects that I have worked on in the past. Each project is labeled correctly with the language and date in whitch it was made.</p>
+            <p class="primary-text">Here are a few Projects that I have worked on in the past. Each project is labeled correctly with the language and date in whitch it was made. You can also click the box to see a video of each project!</p>
         </div>
 
-<div class="container">
+<div class="container" id="project-container">
   <div class="row">
     <div class="col">
        <div class="single-project" id="project-1" onclick="OpenPopUp(`myModal`)">
-          <img class="project-img" src=":" alt="project-img" />
+          <img class="project-img" src="/Assets/img/ColorTrek.PNG" alt="project-img" />
           <div class="project-content">
           <p class="project-title">Colour Trek</p>
-            <p class="project-description">Colour Trek is the best and most detailed project ive ever worked on. <br/>
+            <p class="project-description">Colour Trek is the best and most detailed project ive ever worked on. So Far. <br/>
             It was made using Swift and features random spawns of the collition objects and ball volocities. 
             This was made in my Sinor Year of High School.
             </p>
@@ -36,7 +36,7 @@
     <div class="row">
     <div class="col">
     <div class="single-project" onclick="OpenPopUp(`myModal-moneyManager`)">
-            <img class="project-img" src=":" alt="project-img" />
+            <img class="project-img" src="/Assets/img/moneyManager.png" alt="project-img" />
           <div class="project-content">
           <p class="project-title">Money Manager</p>
             <p class="project-description">The money manager website App I created helped me with keeping track of my expences. 
@@ -47,7 +47,7 @@
       <div class="row">
     <div class="col">
      <div class="single-project" onclick="OpenPopUp(`myModal-SimonSays`)">
-            <img class="project-img" src=":" alt="project-img" />
+            <img class="project-img" src="/Assets/img/simonSays.png" alt="project-img" />
           <div class="project-content">
           <p class="project-title">Simon Says</p>
             <p class="project-description">My Simon Says app was a fun app to make. This was also made with Swift and making this was a challenge and fun.
@@ -96,8 +96,8 @@
        <!-- Modal content -->
   <div class="modal-content">
     <span class="close" onclick="closePopUp(`myModal`)">&times;</span>
-    <p>This is the Colour Trek Popup</p>
-    <p>Make sure to pause video so it doesnt play when you close window! Audio is set to muted because I recorded this durring class in grade 10 for another assignment at the time.</p>
+    <p>Colour Trek:</p>
+    <p>Make sure to pause video so it doesnt play when you close window! Audio is set to muted because I recorded this durring class in grade 10 for another assignment at the time. There is music but alot of background noise</p>
      <video class="moneyManager-video" controls autoplay muted>
     <source src="/Assets/videos/color-trek.mp4" type="video/mp4">
     </video>

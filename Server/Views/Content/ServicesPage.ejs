@@ -6,9 +6,58 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/css/ServicesPage.css" />
     </head>
-    <body>
+    <body class="service-body">
    <%- include('../Components/NavBar.ejs') %>
+<div class="container" id="service-container">
+  <div class="row" id="service-header">
+       <header class="service-header">
+    <h4>Service Section</h4>
+    <p class="service-text">
+    Welcome to my Service Page. My service is creating front-end websites like this one for the right price. 
+    Below you can find some of my past projects I have worked on. If you have any questions please feel free to email me.
+    </p>
+    </header>
+  </div>
+
+    <div class="row">
+        <div class="service-offer">
+    <h4>Offering:</h4>
+    <p class="offer-text">
+    I can create and design any front end website design you have. I have expreience with React, and EJS.
+    For most of my projects I will use firebase for the back end and Bootstrap as plugin to make your website 
+    flash even more to customers. 
+    </p>
+    
+    <p><a class="contact" href="mailto:alex20green01@gmail.com">Book a Meeting</a></p>
+    </div>
+  </div>
+
+
+    <div class="row" id="pastWork">
+    <h4>Past Work Expreiences</h4>
+         <div class="col-sm" id="dig-insights">
+         <img class="dig-logo" src="/Assets/img/digInsights.png" alt="dig-logo"/>
+        Dig Insights info
+
+        <p> I did a high school co-op placement at Dig Insights located down town Toronto, where I learned React JS and front end coding. The co-op taught me so much about the ever growing industry of programming and what to expect in this feild.</p>
+    </div>
+     <div class="col-sm" id="color-switch-game">
+        Color Switch Game info
+
+        <p> Color Switch or Simon Says is another game i made in highschool. this was for fun and it was very interesting to code. </p>
+    </div>
+
+     <div class="col-sm" id="color-trek">
+        Color trek info
+          <p> Color Trek is a game I created in HighSchool for a final project. Please Click the link to find out more.</p>
+    </div>
+     <a class="view-more-tag" href="/ProjectsPage">See more projects</a>
+  </div>
+</div>
+
+     <!--
      <div class="homePage-Background">
+   
     <header class="service-header">
     <h4>Service Section</h4>
     <p class="service-text">
@@ -40,8 +89,9 @@
         <a class="view-more-tag">See more projects</a>
         </div>
     </div>
+  
      </div>
-
+  -->
             <%- include('../Components/footer.ejs') %>
     </body>
 </html>

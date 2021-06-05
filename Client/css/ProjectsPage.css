@@ -2,12 +2,17 @@
     cursor: pointer;
     border: 1.5px solid black;
     margin: auto;
-    background-color: #1f222c;
+    background-color: #333533;
     margin-left: 100px;
+    margin-top: 70px;
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
     margin-right: 100px;
+}
+
+h2 {
+    color: whitesmoke;
 }
 
 .projects-header {
@@ -20,13 +25,25 @@
     margin-top: 15px;
 }
 
+.modal-content {
+    width: 80% !important;
+}
+
 .homePage-Background {
-    background-color: #1f223c;
+    background-color: #1c2335;
+}
+
+.project-title {
+    margin-top: -30px;
 }
 
 .project-img {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    margin-top: 10px;
+    height: 80px;
+    border-radius: 20px;
+    margin-left: 100px;
+    top: 20px;
 }
 
 .Colour-Trek-contentPopUp {

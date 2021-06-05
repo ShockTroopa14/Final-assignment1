@@ -1,19 +1,33 @@
-.contectPage-Background {
+#contactPage-Background {
     height: 1000px;
-    background-color: #1f223c;
+    background-color: #1f223c !important;
+}
+
+* {
+    color: whitesmoke;
+}
+
+#contact-body {
+    background-color: #1f223c !important;
 }
 
 .contact-container {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
     width: 400px;
     margin-left: auto;
+    background-color: #333533;
     margin-right: auto;
-    border: 1px solid red;
+    border: 1.5px solid black;
+    border-radius: 10px;
 }
 
 #contact-row {
-    border: 3px solid orange;
+    background-color: #242424;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 50px;
 }
 
 .pfp-container {
@@ -22,7 +36,6 @@
 
 .closeUp-pfp {
     border-radius: 50px;
-    margin-top: 50px;
     width: 170px;
     height: 170px;
 }
@@ -51,11 +64,13 @@
 }
 
 .github-container {
+    background-color: #242424;
     margin-top: 200px;
     margin-bottom: 300px;
 }
 
 .social-icon-container {
+    margin-top: 40px;
     padding: 10px;
     width: fit-content;
     margin-left: auto;
