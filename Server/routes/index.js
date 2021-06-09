@@ -41,6 +41,14 @@ router.get('/ProjectsPage', function(req, res, next) {
 router.get('/ServicePage', function(req, res, next) {
     res.render('../Views/Content/ServicesPage.ejs', { title: 'Home Page' });
 });
+
+router.get('/BuissnessContactView', function(req, res, next) {
+    res.render('../Views/Content/BuissnessContact.ejs', { title: 'Home Page' });
+});
+
+
+
+
 router.get('/register', function(req, res, next) {
     res.render('../Views/Content/register.ejs', { title: 'Home Page' });
 });
