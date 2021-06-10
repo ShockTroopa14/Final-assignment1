@@ -14,11 +14,20 @@ const express = require('express');
 
 const bodyParser = require('body-parser');
 
+
+const bcrypt = require('bcryptjs');
+
+const mongoose = require('mongoose');
+
 const { check, validaitonResult, validationResult } = require('express-validator');
 
+mongoose.connect('mongodb://localhost/assignment2', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+const User = require('../Models/user');
 const app = express();
+app.use(express.json())
+    //app.post goes here
 
-const urlencodedParser = bodyParser.urlencoded({ extended: false });
+const urlencodedParser = express.urlencoded({ extended: false });
 
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
@@ -55,6 +64,12 @@ router.get('/register', function(req, res, next) {
 router.get('/logIn', function(req, res, next) {
     res.render('../Views/Content/logIn.ejs');
 });
+
+router.post('/logIn', async(req, res, next) => {
+    res.json({ status: 'ok' })
+    res.render('../Views/Content/logIn.ejs');
+});
+
 router.post('/register', urlencodedParser, [
     //validation username
     check('username', 'The username must be more then 3 character long')
@@ -76,8 +91,13 @@ router.post('/register', urlencodedParser, [
 
 
     //function that handles the errors and correct data if entered
-], function(req, res, next) {
+], async(req, res) => {
     const errors = validationResult(req);
+    // const username = req.body.username;
+    // const email = req.body.email;
+    // const password = req.body.password;
+
+    const { username, email, password } = req.body;
     if (!errors.isEmpty()) {
 
         // return res.status(422).jsonp(errors.array());
@@ -88,8 +108,31 @@ router.post('/register', urlencodedParser, [
         })
     } else {
 
-        res.render('../Views/Content/homePage.ejs', {})
-        console.log(req.body)
+
+        // res.render('../Views/Content/homePage.ejs', {})
+        try {
+            console.log(username, email, password)
+
+            let user = await User.create({ username, email, password });
+            console.log("User Created", user);
+
+            // let responce = res.json(user);
+            // console.log(responce)
+            // const responce = await User.create({
+            //     username,
+            //     email,
+            //     password
+            // })
+        } catch (error) {
+            //here will go the code tosend the error to the screen. 
+            console.log("There is an error", error)
+            res.render('../Views/Content/register.ejs', {
+                error
+            })
+            console.log(error);
+
+        }
+
     }
 });
 
