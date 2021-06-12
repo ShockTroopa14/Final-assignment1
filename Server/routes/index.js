@@ -36,7 +36,7 @@ exports.default = router;
 
 //these are the routes for each link on the website.
 router.get('/', function(req, res, next) {
-    res.render('../Views/Content/homePage.ejs', { title: 'Home Page' });
+    res.render('../Views/Content/homePage.ejs', { title: 'Home Page', Login: false });
 });
 router.get('/AboutMe', function(req, res, next) {
     res.render('../Views/Content/AboutMe.ejs', { title: 'Home Page' });
@@ -61,13 +61,21 @@ router.get('/BuissnessContactView', function(req, res, next) {
 router.get('/register', function(req, res, next) {
     res.render('../Views/Content/register.ejs', { title: 'Home Page' });
 });
-router.get('/logIn', function(req, res, next) {
+router.get('/login', function(req, res, next) {
     res.render('../Views/Content/logIn.ejs');
 });
 
-router.post('/logIn', async(req, res, next) => {
-    res.json({ status: 'ok' })
-    res.render('../Views/Content/logIn.ejs');
+router.post('/login', async(req, res, next) => {
+    const { username, password } = req.body;
+    const user = await User.findOne({ username, password }).lean()
+    console.log(user)
+    if (!user) {
+        return res.json({ status: 'error', error: "we cant find those details in our server" })
+    } else {
+        console.log('Successful  log in', username, password);
+        res.render('../Views/Content/homePage.ejs', { username: username, Login: true });
+    }
+
 });
 
 router.post('/register', urlencodedParser, [
@@ -116,6 +124,7 @@ router.post('/register', urlencodedParser, [
             let user = await User.create({ username, email, password });
             console.log("User Created", user);
 
+
             // let responce = res.json(user);
             // console.log(responce)
             // const responce = await User.create({
@@ -136,8 +145,5 @@ router.post('/register', urlencodedParser, [
     }
 });
 
-//loging route
-router.get('/logIn', function(req, res, next) {
-    res.render('../Views/Content/ServicesPage.ejs', { title: 'Home Page' });
-});
+
 //# sourceMappingURL=index.js.map
