@@ -10,10 +10,12 @@ var __importDefault = (this && this.__importDefault) || function(mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 //importing everything 
+let LoginValue = false
+
+let currentUser = ""
 const express = require('express');
 
 const bodyParser = require('body-parser');
-
 
 const bcrypt = require('bcryptjs');
 
@@ -24,11 +26,10 @@ const { check, validaitonResult, validationResult } = require('express-validator
 mongoose.connect('mongodb://localhost/assignment2', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 const User = require('../Models/user');
 const app = express();
-app.use(express.json())
-    //app.post goes here
+app.use(express.json());
+//app.post goes here
 
 const urlencodedParser = express.urlencoded({ extended: false });
-
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const router = express_1.default.Router();
@@ -36,31 +37,33 @@ exports.default = router;
 
 //these are the routes for each link on the website.
 router.get('/', function(req, res, next) {
-    res.render('../Views/Content/homePage.ejs', { title: 'Home Page', Login: false });
+    res.render('../Views/Content/homePage.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser });
 });
+
 router.get('/AboutMe', function(req, res, next) {
-    res.render('../Views/Content/AboutMe.ejs', { title: 'Home Page' });
+    res.render('../Views/Content/AboutMe.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser });
 });
+
 router.get('/ContactPage', function(req, res, next) {
-    res.render('../Views/Content/ContactPage.ejs', { title: 'Home Page' });
+    res.render('../Views/Content/ContactPage.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser });
 });
+
 router.get('/ProjectsPage', function(req, res, next) {
-    res.render('../Views/Content/ProjectsPage.ejs', { title: 'Home Page' });
+    res.render('../Views/Content/ProjectsPage.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser });
 });
+
 router.get('/ServicePage', function(req, res, next) {
-    res.render('../Views/Content/ServicesPage.ejs', { title: 'Home Page' });
+    res.render('../Views/Content/ServicesPage.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser });
 });
 
 router.get('/BuissnessContactView', function(req, res, next) {
-    res.render('../Views/Content/BuissnessContact.ejs', { title: 'Home Page' });
+    res.render('../Views/Content/BuissnessContact.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser });
 });
-
-
-
 
 router.get('/register', function(req, res, next) {
-    res.render('../Views/Content/register.ejs', { title: 'Home Page' });
+    res.render('../Views/Content/register.ejs', { title: 'Home Page', Login: LoginValue, username: username });
 });
+
 router.get('/login', function(req, res, next) {
     res.render('../Views/Content/logIn.ejs');
 });
@@ -72,10 +75,11 @@ router.post('/login', async(req, res, next) => {
     if (!user) {
         return res.json({ status: 'error', error: "we cant find those details in our server" })
     } else {
+        currentUser = username
+        LoginValue = true
         console.log('Successful  log in', username, password);
-        res.render('../Views/Content/homePage.ejs', { username: username, Login: true });
+        res.render('../Views/Content/homePage.ejs', { username: username, Login: LoginValue });
     }
-
 });
 
 router.post('/register', urlencodedParser, [
@@ -125,12 +129,12 @@ router.post('/register', urlencodedParser, [
             console.log("User Created", user);
 
 
-            // let responce = res.json(user);
-            // console.log(responce)
-            // const responce = await User.create({
-            //     username,
-            //     email,
-            //     password
+            // let responce = res.json(user); 
+            // console.log(responce) 
+            // const responce = await User.create({ 
+            //     username, 
+            //     email, 
+            //     password 
             // })
         } catch (error) {
             //here will go the code tosend the error to the screen. 
@@ -144,6 +148,5 @@ router.post('/register', urlencodedParser, [
 
     }
 });
-
 
 //# sourceMappingURL=index.js.map
