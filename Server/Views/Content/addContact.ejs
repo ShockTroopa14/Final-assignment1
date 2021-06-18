@@ -13,7 +13,7 @@
 <%- include('../Components/NavBar.ejs') %>
     <h3> Add Contact</h3>
     <div class="addContact-container">
-  <% if( error != 'undefined') { %>
+  <% if( error === true) { %>
      
         <div class="alert alert-warning alert-dismissible fade show" role="alert" id="error-display">
             Please make sure all feilds are filled out

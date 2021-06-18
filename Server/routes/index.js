@@ -107,7 +107,7 @@ router.get('/register', function(req, res, next) {
 });
 
 router.get('/addContact', function(req, res) {
-    res.render('../Views/Content/addContact.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser, error: "" });
+    res.render('../Views/Content/addContact.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser, error: false });
 })
 
 router.post('/addContact', async(req, res, next) => {
@@ -119,7 +119,7 @@ router.post('/addContact', async(req, res, next) => {
 
         res.redirect('/ContactList')
     } catch (error) {
-        res.render('../Views/Content/addContact.ejs', { error: error, Login: LoginValue })
+        res.render('../Views/Content/addContact.ejs', { error: true, Login: LoginValue })
     }
 
 
