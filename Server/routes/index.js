@@ -118,7 +118,7 @@ router.post('/addContact', async(req, res, next) => {
 });
 
 router.get('/login', function(req, res, next) {
-    res.render('../Views/Content/logIn.ejs');
+    res.render('../Views/Content/logIn.ejs', { error: false });
 });
 router.get('/ContactList', async(req, res, next) => {
     const errors = validationResult(req);
@@ -146,12 +146,17 @@ router.get('/ContactList', async(req, res, next) => {
 
 //     res.render('../Views/Content/ContactList.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser, Contacts: ContactList });
 // })
+router.get('/logout', async(req, res) => {
+    LoginValue = false;
+    res.redirect('/');
+})
 
 router.post('/login', async(req, res, next) => {
     const { username, password } = req.body;
     const user = await User.findOne({ username, password }).lean()
 
     if (!user) {
+        res.render('../Views/Content/logIn.ejs', { error: true })
         return res.json({ status: 'error', error: "we cant find those details in our server" })
     } else {
         currentUser = username

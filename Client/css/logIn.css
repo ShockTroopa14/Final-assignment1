@@ -7,19 +7,24 @@ BOOTSTRAP was used in this project.
 */
 
 .logIn-body {
-    background-color: antiquewhite;
+    background-color: #262730;
+}
+
+h1 {
+    color: whitesmoke
 }
 
 .styled-div {
     border: 2px solid black;
     margin-left: auto;
-    height: 250px;
+    height: auto;
     border-radius: 20px;
     margin-right: auto;
-    width: fit-content;
+    width: 40%;
     text-align: center;
     margin-top: 260px;
-    background-color: darkgray;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: #343a40;
 }
 
 .form-group {
@@ -28,19 +33,31 @@ BOOTSTRAP was used in this project.
     margin-right: 10px;
 }
 
+#label-text {
+    color: whitesmoke;
+}
+
 .form-input {
+    border: 0px;
+    border-radius: 10px;
+    background-color: darkgray;
     border-radius: 5px;
     padding: 5px;
     width: 100%;
 }
 
-.log-in-btn {
-    position: relative;
-    top: 20px;
+.logIn {
+    margin-top: 10px;
     text-decoration: none;
     color: whitesmoke;
     background-color: green;
     border-radius: 10px;
+    width: 150px;
     border: 1px solid black;
     padding: 10px;
+}
+
+.logIn:active {
+    position: relative;
+    top: 2px;
 }
