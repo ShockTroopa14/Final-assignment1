@@ -42,7 +42,7 @@ router.get("/edit/:id", async(req, res) => {
 
     let currentEditContact = editContact;
     console.log('current edit contact', currentEditContact);
-    res.render('../Views/Content/editContact.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser, editContact: currentEditContact })
+    res.render('../Views/Content/editContact.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser, editContact: currentEditContact, error: false })
 })
 
 router.get("/delete/:id", async(req, res) => {
@@ -61,6 +61,7 @@ router.post("/edit/:id", async(req, res) => {
     console.log("AWOOO")
     let id = req.params.id;
     let { name, email, cellphone, relation } = req.body;
+
     console.log(name, email, cellphone, relation);
     let UpdatedContact = new Contact({
         "_id": id,
@@ -69,10 +70,9 @@ router.post("/edit/:id", async(req, res) => {
         "cellphone": req.body.cellphone,
         "relation": req.body.relation
     });
+
     Contact.updateOne({ _id: id }, UpdatedContact, (err) => {
-        if (err) {
-            console.log(err)
-        }
+
         console.log('Updated');
         res.redirect('/ContactList')
     })
@@ -105,16 +105,25 @@ router.get('/register', function(req, res, next) {
 });
 
 router.get('/addContact', function(req, res) {
-    res.render('../Views/Content/addContact.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser });
+    res.render('../Views/Content/addContact.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser, error: "" });
 })
 
 router.post('/addContact', async(req, res, next) => {
-    let { name, email, cellphone, relation } = req.body;
+    try {
+        let { name, email, cellphone, relation } = req.body;
+        let newContact = await Contact.create({ name, email, cellphone, relation });
 
-    let newContact = await Contact.create({ name, email, cellphone, relation });
-    console.log('Successful  Contact created', newContact);
+        console.log('Successful  Contact created', newContact);
 
-    res.redirect('/ContactList')
+        res.redirect('/ContactList')
+    } catch (error) {
+        res.render('../Views/Content/addContact.ejs', { error: error, Login: LoginValue })
+    }
+
+
+
+
+
 });
 
 router.get('/login', function(req, res, next) {
@@ -137,7 +146,7 @@ router.get('/ContactList', async(req, res, next) => {
 
     // let newContact = await Contact.create({ name, email, cellphone, relation });
     //console.log('Successful  Contact created', newContact);
-    res.render('../Views/Content/ContactList.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser, Contacts: ContactList });
+    res.render('../Views/Content/ContactList.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser, Contacts: ContactList, err: false });
 });
 
 // router.post('/ContactList', async(req, res) => {

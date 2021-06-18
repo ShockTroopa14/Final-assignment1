@@ -26,13 +26,13 @@
         </div>
         
         <% } %>
-    <form action="/login" method="post" id="logIn-formPage">
+    <form action="/login" method="post" id="logIn-formPage" autocomplete="off">
         <div class="form-group">
             <label for="logIn-userName" class="form-userName" id="label-text">UserName</label>
             <input type="text" class="form-input" name="username" id="userName-input" />
         </div>
          <div class="form-group">
-             <label for="logIn-password" class="form-password" id="label-text">Password</label>
+             <label type="password" for="logIn-password" class="form-password" id="label-text">Password</label>
             <input type="logIn-password" class="form-input" name="password" id="password-input" />
         </div>
             <button class="logIn">Login</button>

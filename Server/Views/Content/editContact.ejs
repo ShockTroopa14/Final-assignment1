@@ -10,21 +10,31 @@
 <%- include('../Components/NavBar.ejs') %>
     <div class="editContact-container">
     <h1>Edit Page</h1>
+
+    
+         <% if(error === true) { %>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" id="error-display">
+            some information is not filled in.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <% } %>
     <form  method="post" id="edit-formPage">
         <div class="form-group">
 
-            <input type="text" class="editContact-input" name="name" id="name-input" placeholder='<%=editContact.name %>'/>
+            <input type="text" class="editContact-input" name="name" id="input" placeholder='<%=editContact.name %>'/>
         </div>
 
          <div class="form-group">
 
-            <input type="text" class="editContact-input" name="email" id="email-input" placeholder='<%=editContact.email %>' />
+            <input type="text" class="editContact-input" name="email" id="input" placeholder='<%=editContact.email %>' />
         </div>
          <div class="form-group">
-            <input type="text" class="editContact-input" name="cellphone" id="cellphone-input" placeholder='<%=editContact.cellphone %>'/>
+            <input type="text" class="editContact-input" name="cellphone" id="input" placeholder='<%=editContact.cellphone %>'/>
         </div>
      <div class="form-group">
-            <input type="text" class="editContact-input" name="relation" id="relation-input" placeholder='<%=editContact.relation %>'/>
+            <input type="text" class="editContact-input" name="relation" id="input" placeholder='<%=editContact.relation %>'/>
         </div>
         <button type="submit" class="editContact-btn" >Edit Contact</button>
          <button type="submit" class="btn btn-primary">Cancel</button>
