@@ -220,7 +220,7 @@ router.post('/register', [
 
             let user = await User.create({ username, email, password });
             console.log("User Created", user);
-
+            res.render('../Views/Content/homePage.ejs', { Login: true, username: username })
 
             // let responce = res.json(user); 
             // console.log(responce) 
