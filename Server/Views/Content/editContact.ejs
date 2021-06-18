@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Buissness Contact View</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/css/editContact.css" rel="stylesheet">
+    </head>
+    <body>
+<%- include('../Components/NavBar.ejs') %>
+    <div class="editContact-container">
+    <h1>Edit Page</h1>
+    <form  method="post" id="edit-formPage">
+        <div class="form-group">
+
+            <input type="text" class="editContact-input" name="name" id="name-input" placeholder='<%=editContact.name %>'/>
+        </div>
+
+         <div class="form-group">
+
+            <input type="text" class="editContact-input" name="email" id="email-input" placeholder='<%=editContact.email %>' />
+        </div>
+         <div class="form-group">
+            <input type="text" class="editContact-input" name="cellphone" id="cellphone-input" placeholder='<%=editContact.cellphone %>'/>
+        </div>
+     <div class="form-group">
+            <input type="text" class="editContact-input" name="relation" id="relation-input" placeholder='<%=editContact.relation %>'/>
+        </div>
+        <button type="submit" class="editContact-btn" >Edit Contact</button>
+         <button type="submit" class="btn btn-primary">Cancel</button>
+    </form>
+    </div>
+    
+
+
+<%- include('../Components/footer.ejs') %>
+    </body>
+</html>

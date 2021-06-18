@@ -4,9 +4,48 @@
         <title>Contact View Page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
+        <link href="css/contactList.css" rel="stylesheet">
+        <script src="/routes/index.js"></script>
     </head>
-    <body>
-    
+    <body class="contact-body">
+       <%- include('../Components/NavBar.ejs') %>
+            <div class="contact-list-container">
+             <div class="add-contact-container">
+        <a class="add-contact-btn" href="/addContact">Add Contact</a>
+        </div>
+        <div class="styled-div">
+       
+            <table class="table table-striped" id="contact-list-table">
+                <thead>
+                    <tr>
+                     <th scope="col">#</th>
+                     <th scope="col">First</th>
+                     <th scope="col">Last</th>
+                     <th scope="col">Cellphone</th>
+                     <th scope="col">Relation</th>
+                     <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                 <tbody>
+                         <% for(let counter = 0; counter < Contacts.length; counter++) { %>
+                                  <tr>
+                                  <%console.log(Contacts) %>
+                                     <th scope="row"><%= counter + 1 %></th>
+                                     <td><%= Contacts[counter].name %></td>
+                                     <td><%= Contacts[counter].email %></td>
+                                     <td><%= Contacts[counter].cellphone %></td>
+                                     <td><%= Contacts[counter].relation %></td>
+                                      <td class="text-center"><a href="/edit/<%= Contacts[counter]._id %>" class="btn btn-primary btn-sm edit"> Edit</a></td>
+                                      <td class="text-center"><a href="/delete/<%= Contacts[counter]._id %>"> Delete</button></td>
+                                  </tr>
+                            <% } %>
+
+                       
+                    </tbody>
+                </table>
+                 </div>
+            </div>
+           <%- include('../Components/footer.ejs') %>
     </body>
 </html>

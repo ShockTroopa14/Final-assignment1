@@ -10,14 +10,10 @@ var __importDefault = (this && this.__importDefault) || function(mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 //importing everything 
-let LoginValue = false
-
-let currentUser = ""
+let LoginValue = false;
+let currentUser = "";
+let id = "";
 const express = require('express');
-
-const bodyParser = require('body-parser');
-
-const bcrypt = require('bcryptjs');
 
 const mongoose = require('mongoose');
 
@@ -25,11 +21,10 @@ const { check, validaitonResult, validationResult } = require('express-validator
 
 mongoose.connect('mongodb://localhost/assignment2', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 const User = require('../Models/user');
+const Contact = require('../Models/contact');
 const app = express();
 app.use(express.json());
-//app.post goes here
-
-const urlencodedParser = express.urlencoded({ extended: false });
+//app.post goes here 
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const router = express_1.default.Router();
@@ -37,8 +32,52 @@ exports.default = router;
 
 //these are the routes for each link on the website.
 router.get('/', function(req, res, next) {
+
     res.render('../Views/Content/homePage.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser });
 });
+
+router.get("/edit/:id", async(req, res) => {
+    id = req.params.id;
+    let editContact = await Contact.findById(id)
+
+    let currentEditContact = editContact;
+    console.log('current edit contact', currentEditContact);
+    res.render('../Views/Content/editContact.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser, editContact: currentEditContact })
+})
+
+router.get("/delete/:id", async(req, res) => {
+    let id = req.params.id;
+    Contact.remove({ _id: id }, (err) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.redirect('/ContactList')
+        }
+    })
+})
+
+router.post("/edit/:id", async(req, res) => {
+    console.log("AWOOO")
+    let id = req.params.id;
+    let { name, email, cellphone, relation } = req.body;
+    console.log(name, email, cellphone, relation);
+    let UpdatedContact = new Contact({
+        "_id": id,
+        "name": req.body.name,
+        "email": req.body.email,
+        "cellphone": req.body.cellphone,
+        "relation": req.body.relation
+    });
+    Contact.updateOne({ _id: id }, UpdatedContact, (err) => {
+        if (err) {
+            console.log(err)
+        }
+        console.log('Updated');
+        res.redirect('/ContactList')
+    })
+
+
+})
 
 router.get('/AboutMe', function(req, res, next) {
     res.render('../Views/Content/AboutMe.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser });
@@ -61,17 +100,51 @@ router.get('/BuissnessContactView', function(req, res, next) {
 });
 
 router.get('/register', function(req, res, next) {
-    res.render('../Views/Content/register.ejs', { title: 'Home Page', Login: LoginValue, username: username });
+    res.render('../Views/Content/register.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser });
+});
+
+router.get('/addContact', function(req, res) {
+    res.render('../Views/Content/addContact.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser });
+})
+
+router.post('/addContact', async(req, res, next) => {
+    let { name, email, cellphone, relation } = req.body;
+
+    let newContact = await Contact.create({ name, email, cellphone, relation });
+    console.log('Successful  Contact created', newContact);
+
+    res.redirect('/ContactList')
 });
 
 router.get('/login', function(req, res, next) {
     res.render('../Views/Content/logIn.ejs');
 });
+router.get('/ContactList', async(req, res, next) => {
+    const errors = validationResult(req);
+    const ContactList = await Contact.find({}).lean();
+    console.log('Contact-list', ContactList);
+
+    // let name = "Another";
+    // let email = "alex20green01@gmail.com";
+    // let cellphone = "9059734148";
+    // let relation = "co worker";
+
+    // let newContact = await Contact.create({ name, email, cellphone, relation });
+    //console.log('Successful  Contact created', newContact);
+    res.render('../Views/Content/ContactList.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser, Contacts: ContactList });
+});
+
+// router.post('/ContactList', async(req, res) => {
+//     const errors = validationResult(req);
+
+
+//     res.render('../Views/Content/ContactList.ejs', { title: 'Home Page', Login: LoginValue, username: currentUser, Contacts: ContactList });
+// })
 
 router.post('/login', async(req, res, next) => {
     const { username, password } = req.body;
     const user = await User.findOne({ username, password }).lean()
-    console.log(user)
+
     if (!user) {
         return res.json({ status: 'error', error: "we cant find those details in our server" })
     } else {
@@ -82,7 +155,7 @@ router.post('/login', async(req, res, next) => {
     }
 });
 
-router.post('/register', urlencodedParser, [
+router.post('/register', [
     //validation username
     check('username', 'The username must be more then 3 character long')
     .exists()
@@ -101,13 +174,13 @@ router.post('/register', urlencodedParser, [
     //checks the length of the password
     .isLength({ min: 5 })
 
+    //function that handles the errors and correct data if entered.
 
-    //function that handles the errors and correct data if entered
 ], async(req, res) => {
     const errors = validationResult(req);
-    // const username = req.body.username;
-    // const email = req.body.email;
-    // const password = req.body.password;
+    // const username = req.body.username; 
+    // const email = req.body.email; 
+    // const password = req.body.password; 
 
     const { username, email, password } = req.body;
     if (!errors.isEmpty()) {
