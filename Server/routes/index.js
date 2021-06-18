@@ -46,6 +46,7 @@ router.get("/edit/:id", async(req, res) => {
 })
 
 router.get("/delete/:id", async(req, res) => {
+
     let id = req.params.id;
     Contact.remove({ _id: id }, (err) => {
         if (err) {
@@ -121,7 +122,12 @@ router.get('/login', function(req, res, next) {
 });
 router.get('/ContactList', async(req, res, next) => {
     const errors = validationResult(req);
-    const ContactList = await Contact.find({}).lean();
+    const ContactList = await Contact.find({}, null, { sort: { name: 1 } }, function(err, users) {
+        if (err) {
+            console.log(err);
+        }
+        console.log(users);
+    })
     console.log('Contact-list', ContactList);
 
     // let name = "Another";
