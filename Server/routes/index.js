@@ -19,7 +19,7 @@ const mongoose = require('mongoose');
 
 const { check, validaitonResult, validationResult } = require('express-validator');
 //mongodb://localhost/assignment2
-mongoose.connect('mongodb://assignment2-complete.herokuapp.com/register', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+mongoose.connect('mongodb://localhost/assignment2', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 const User = require('../Models/user');
 const Contact = require('../Models/contact');
 const app = express();
