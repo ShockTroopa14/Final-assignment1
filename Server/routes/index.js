@@ -19,7 +19,9 @@ const mongoose = require('mongoose');
 
 const { check, validaitonResult, validationResult } = require('express-validator');
 //mongodb://localhost/assignment2
-mongoose.connect('mongodb://localhost/assignment2', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+
+const DBConfig = require('../Config/db');
+mongoose.connect(DBConfig.URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 const User = require('../Models/user');
 const Contact = require('../Models/contact');
 const app = express();
