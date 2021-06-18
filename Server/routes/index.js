@@ -119,7 +119,7 @@ router.post('/addContact', async(req, res, next) => {
 
         res.redirect('/ContactList')
     } catch (error) {
-        res.render('../Views/Content/addContact.ejs', { error: true, Login: LoginValue })
+        res.render('../Views/Content/addContact.ejs', { error: true, Login: LoginValue, username: currentUser })
     }
 
 
